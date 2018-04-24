@@ -39,9 +39,9 @@ Namespace FormattingServicesExample
             Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkButton1 = New DevExpress.XtraEditors.CheckButton()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -125,9 +125,9 @@ Namespace FormattingServicesExample
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
 
