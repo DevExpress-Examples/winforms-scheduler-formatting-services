@@ -36,7 +36,7 @@ Namespace FormattingServicesExample
             Dim timeScaleFixedInterval1 As New DevExpress.XtraScheduler.TimeScaleFixedInterval()
             Dim timeRuler3 As New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
-            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
+            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerDataStorage(Me.components)
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkButton1 = New DevExpress.XtraEditors.CheckButton()
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +57,7 @@ Namespace FormattingServicesExample
             Me.schedulerControl1.OptionsView.ToolTipVisibility = DevExpress.XtraScheduler.ToolTipVisibility.Always
             Me.schedulerControl1.Size = New System.Drawing.Size(650, 342)
             Me.schedulerControl1.Start = New Date(2009, 1, 1, 0, 0, 0, 0)
-            Me.schedulerControl1.Storage = Me.schedulerStorage1
+            Me.schedulerControl1.DataStorage = Me.schedulerStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
             Me.schedulerControl1.Views.DayView.AppointmentDisplayOptions.ContinueArrowDisplayType = DevExpress.XtraScheduler.AppointmentContinueArrowDisplayType.ArrowWithText
@@ -136,7 +136,7 @@ Namespace FormattingServicesExample
         #End Region
 
         Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
-        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerDataStorage
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
         Private WithEvents checkButton1 As DevExpress.XtraEditors.CheckButton
     End Class
