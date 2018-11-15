@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Data.cs](./CS/FormattingServicesExample/Data/Data.cs) (VB: [Data.vb](./VB/FormattingServicesExample/Data/Data.vb))
+* [Form1.cs](./CS/FormattingServicesExample/Form1.cs) (VB: [Form1.vb](./VB/FormattingServicesExample/Form1.vb))
+<!-- default file list end -->
 # Formatting Services - an example of use
 
 
