@@ -3,12 +3,39 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E507)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Formatting Services - an example of use
+# WinForms Scheduler - Formatting services
 
+The WinForms scheduler control implements a set of services that make common tasks easier to implement (such as navigation, selection, formatting, keyboard and mouse event handling, etc.). 
 
-<p>This example demonstrates the use of XtraScheduler formatting services. <br />
-They can be helpful if you have to modify the display format of text contents for visual elements according to the end-user requests. Clients often get used to certain date-time or numerical representations, and the application deployment can be performed much smoother if their requirements are met. Clicking the <strong>Custom Format button</strong> performs a service substitution, modifying display formats of appointment start and end times, Timeruler scales, header captions, and header tooltips.</p><p>For more information on XtraScheduler services see the <a href="http://documentation.devexpress.com/#WindowsForms/CustomDocument4106">Services</a> section in the documentation.</p>
+This example demonstrates [formatting services](https://docs.devexpress.com/WindowsForms/4747/controls-and-libraries/scheduler/services/formatting-services):
 
-<br/>
+```csharp
+private void checkButton1_CheckedChanged(object sender, EventArgs e) {
+    if (checkButton1.Checked) {
+        schedulerControl1.RemoveService(typeof(IAppointmentFormatStringService));
+        schedulerControl1.AddService(typeof(IAppointmentFormatStringService), customAppointmentFormatStringService);
+        schedulerControl1.RemoveService(typeof(ITimeRulerFormatStringService));
+        schedulerControl1.AddService(typeof(ITimeRulerFormatStringService), customTimeRulerFormatStringService);
+        schedulerControl1.RemoveService(typeof(IHeaderCaptionService));
+        schedulerControl1.AddService(typeof(IHeaderCaptionService), customHeaderCaptionService);
+        schedulerControl1.RemoveService(typeof(IHeaderToolTipService));
+        schedulerControl1.AddService(typeof(IHeaderToolTipService), customHeaderToolTipService);
+        schedulerControl1.ActiveView.LayoutChanged();
+    }
+    else {
+        schedulerControl1.RemoveService(typeof(IAppointmentFormatStringService));
+        schedulerControl1.AddService(typeof(IAppointmentFormatStringService), prevAppointmentFormatStringService);
+        schedulerControl1.RemoveService(typeof(ITimeRulerFormatStringService));
+        schedulerControl1.AddService(typeof(ITimeRulerFormatStringService), prevTimeRulerFormatStringService);
+        schedulerControl1.RemoveService(typeof(IHeaderCaptionService));
+        schedulerControl1.AddService(typeof(IHeaderCaptionService), prevHeaderCaptionService);
+        schedulerControl1.RemoveService(typeof(IHeaderToolTipService));
+        schedulerControl1.AddService(typeof(IHeaderToolTipService), prevHeaderToolTipService);
+        schedulerControl1.ActiveView.LayoutChanged();
+    }
+}
+```
 
+## Documentation
 
+* [Scheduler Services](https://docs.devexpress.com/WindowsForms/4106/controls-and-libraries/scheduler/services)
