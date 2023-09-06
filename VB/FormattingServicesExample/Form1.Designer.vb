@@ -1,6 +1,9 @@
-﻿Imports System
+Imports System
+
 Namespace FormattingServicesExample
-    Partial Public Class Form1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -11,37 +14,37 @@ Namespace FormattingServicesExample
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim timeRuler1 As New DevExpress.XtraScheduler.TimeRuler()
-            Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
-            Dim timeScaleYear1 As New DevExpress.XtraScheduler.TimeScaleYear()
-            Dim timeScaleQuarter1 As New DevExpress.XtraScheduler.TimeScaleQuarter()
-            Dim timeScaleMonth1 As New DevExpress.XtraScheduler.TimeScaleMonth()
-            Dim timeScaleWeek1 As New DevExpress.XtraScheduler.TimeScaleWeek()
-            Dim timeScaleDay1 As New DevExpress.XtraScheduler.TimeScaleDay()
-            Dim timeScaleHour1 As New DevExpress.XtraScheduler.TimeScaleHour()
-            Dim timeScaleFixedInterval1 As New DevExpress.XtraScheduler.TimeScaleFixedInterval()
-            Dim timeRuler3 As New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler1 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler2 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeScaleYear1 As DevExpress.XtraScheduler.TimeScaleYear = New DevExpress.XtraScheduler.TimeScaleYear()
+            Dim timeScaleQuarter1 As DevExpress.XtraScheduler.TimeScaleQuarter = New DevExpress.XtraScheduler.TimeScaleQuarter()
+            Dim timeScaleMonth1 As DevExpress.XtraScheduler.TimeScaleMonth = New DevExpress.XtraScheduler.TimeScaleMonth()
+            Dim timeScaleWeek1 As DevExpress.XtraScheduler.TimeScaleWeek = New DevExpress.XtraScheduler.TimeScaleWeek()
+            Dim timeScaleDay1 As DevExpress.XtraScheduler.TimeScaleDay = New DevExpress.XtraScheduler.TimeScaleDay()
+            Dim timeScaleHour1 As DevExpress.XtraScheduler.TimeScaleHour = New DevExpress.XtraScheduler.TimeScaleHour()
+            Dim timeScaleFixedInterval1 As DevExpress.XtraScheduler.TimeScaleFixedInterval = New DevExpress.XtraScheduler.TimeScaleFixedInterval()
+            Dim timeRuler3 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
             Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkButton1 = New DevExpress.XtraEditors.CheckButton()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -56,7 +59,7 @@ Namespace FormattingServicesExample
             Me.schedulerControl1.OptionsView.ResourceHeaders.RotateCaption = False
             Me.schedulerControl1.OptionsView.ToolTipVisibility = DevExpress.XtraScheduler.ToolTipVisibility.Always
             Me.schedulerControl1.Size = New System.Drawing.Size(650, 342)
-            Me.schedulerControl1.Start = New Date(2009, 1, 1, 0, 0, 0, 0)
+            Me.schedulerControl1.Start = New System.DateTime(2009, 1, 1, 0, 0, 0, 0)
             Me.schedulerControl1.Storage = Me.schedulerStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
@@ -69,7 +72,7 @@ Namespace FormattingServicesExample
             timeRuler1.ShowMinutes = True
             timeRuler2.Caption = "GMT"
             timeRuler2.ShowMinutes = True
-            timeRuler2.TimeZoneId = TimeZoneInfo.Utc.Id
+            timeRuler2.TimeZoneId = System.TimeZoneInfo.Utc.Id
             timeRuler2.UseClientTimeZone = False
             Me.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1)
             Me.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler2)
@@ -115,6 +118,7 @@ Namespace FormattingServicesExample
             Me.checkButton1.Size = New System.Drawing.Size(92, 23)
             Me.checkButton1.TabIndex = 6
             Me.checkButton1.Text = "Custom Format"
+            AddHandler Me.checkButton1.CheckedChanged, New System.EventHandler(AddressOf Me.checkButton1_CheckedChanged)
             ' 
             ' Form1
             ' 
@@ -125,20 +129,21 @@ Namespace FormattingServicesExample
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
+
         Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
-        Private WithEvents checkButton1 As DevExpress.XtraEditors.CheckButton
+
+        Private checkButton1 As DevExpress.XtraEditors.CheckButton
     End Class
 End Namespace
-
