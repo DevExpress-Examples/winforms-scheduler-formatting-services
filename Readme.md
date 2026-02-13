@@ -41,7 +41,7 @@ private void checkButton1_CheckedChanged(object sender, EventArgs e) {
 
 * [Scheduler Services](https://docs.devexpress.com/WindowsForms/4106/controls-and-libraries/scheduler/services)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-formatting-services&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-formatting-services&~~~was_helpful=no)
 
